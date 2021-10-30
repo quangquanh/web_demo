@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>{{ pro_type.name }}</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'product/css/bootstrap.min.css'%}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'product/css/style.css'%}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'product/css/responsive.css'%}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'product/images/fevicon.png'%}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'product/css/jquery.mCustomScrollbar.min.css'%}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="{% static 'product/css/owl.carousel.min.css'%}">
+      <link rel="stylesheet" href="{% static 'product/css/owl.theme.default.min.css'%}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout product_pagr">
+      <!-- loader  -->
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header class="section">
+         <!-- header inner -->
+        <div class="header_main" style="background-color:cornflowerblue;">
+         <div class="header_main" style="background-color:cornflowerblue;">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo"> <a href="index.html"><img src="{% static 'product/images/logo.png'%}" alt="#"></a> </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9" >
+                     <div class="menu-area">
+                        <div class="limit-box">
+                           <nav class="main-menu">
+                              <ul class="menu-area-main">
+                                 <li> <a href="{% url 'product:home'%}">Home</a> </li>
+                                 <li> <a href="about.html">About</a> </li>
+                                 <li><a href="testmonial.html">Testmonial</a></li>
+                                 <li><a href="clients.html">Shop</a></li>
+                                 <li><a href="contact.html">Contact Us</a></li>
+                                 <li class="last"><a href="{% url 'product:search' %}"><img src="{% static 'product/images/search_icon.png'%}" alt="icon"/></a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        </div>
+         <!-- end header inner -->
+      </header>
+      <!-- end header -->
+      </header>
+      <!-- end header -->
+
+       <!-- plant -->
+      <div id="plant" class="section  product" style="font-family: 'Times New Roman', Times, serif;">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 ">
+                  <div class="titlepage">
+                     <!-- in ra tên loại sản phẩm -->
+                     <strong class="black" style="font-size: 25px;">{{pro_type.name}}</strong>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="clothes_main section " style="font-family: 'Times New Roman', Times, serif;">
+         <div class="container">
+           <div class="row">
+              {% for pro in pros %}
+              <!-- lặp trong danh sách sản phẩm thuộc loại sản phẩm và in ra ảnh,tên,giá,mô tả của chúng -->
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                 <div class="sport_product" style="width: 350px; height: 570px;" >
+                   <a href="{% url 'product:view_product' pro.id %}"> <figure>
+                      <img src="{{ pro.img_avata.url }}" alt="img"/>
+                   
+                   <h3><strong class="price_text">{{pro.value}} vnđ</strong></h3>
+                    <h4>{{pro.name}}</h4></figure></a>
+                    {{pro.description}}
+                 </div>
+              </div>
+              {% endfor %}
+            </div>
+           </div>
+          </div>
+     </div>
+
+
+
+      <div id="plant" class="footer layout_padding">
+         <div class="container">
+            <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+         </div>
+      </div>
+     </div>
+
+      <!-- Javascript files-->
+      <script src="{% static 'product/js/jquery.min.js'%}"></script>
+      <script src="{% static 'product/js/popper.min.js'%}"></script>
+      <script src="{% static 'product/js/bootstrap.bundle.min.js'%}"></script>
+      <script src="{% static 'product/js/jquery-3.0.0.min.js'%}"></script>
+      <script src="{% static 'product/js/plugin.js'%}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'product/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+      <script src="{% static 'product/js/custom.js'%}"></script>
+      <!-- javascript --> 
+      <script src="{% static 'product/js/owl.carousel.js'%}"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+         
+         $(".zoom").hover(function(){
+         
+         $(this).addClass('transition');
+         }, function(){
+         
+         $(this).removeClass('transition');
+         });
+         });
+         
+      </script> 
+
+
+</body>
+</html>
